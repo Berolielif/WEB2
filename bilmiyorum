@@ -1,0 +1,12 @@
+from flask import Flask
+import random
+
+app = Flask(__name__)
+yanlis_bilinen_gercekler = ["Çin Seddi aydan görülemez", "Pisa Kulesi zemindeki yumuşaklık nedeniyle yamulmuştur", "Domates bir meyvedir"]
+
+@app.route("/yanlis_bilinenler")
+def hello_world():
+    return f'<p>{random.choice(yanlis_bilinen_gercekler)}</p>'
+
+if __name__ == "__main__":
+    app.run(debug=True)
